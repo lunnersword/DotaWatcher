@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeroCell" id="gTV-IL-0wX" customClass="HeroCollectionViewCell" customModule="DotaWatcher" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="59" height="33"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="59" height="33"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tBf-oe-2th">
+                        <rect key="frame" x="0.0" y="0.0" width="59" height="33"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alchemist_sb.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qg2-pb-gdL">
+                                <rect key="frame" x="0.0" y="0.0" width="59" height="33"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="1N2-Wc-ubL"/>
+                                    <constraint firstAttribute="width" constant="59" id="ICo-AI-KJG"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Qg2-pb-gdL" secondAttribute="trailing" id="KAe-xf-NFm"/>
+                            <constraint firstItem="Qg2-pb-gdL" firstAttribute="top" secondItem="tBf-oe-2th" secondAttribute="top" id="MS8-Lg-b7h"/>
+                            <constraint firstItem="Qg2-pb-gdL" firstAttribute="leading" secondItem="tBf-oe-2th" secondAttribute="leading" id="rrj-Ii-mhd"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <animations/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <animations/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="tBf-oe-2th" secondAttribute="trailing" id="6bB-5p-nYa"/>
+                <constraint firstAttribute="bottom" secondItem="tBf-oe-2th" secondAttribute="bottom" id="fOY-gG-dtq"/>
+                <constraint firstItem="tBf-oe-2th" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fcH-i7-hmi"/>
+                <constraint firstItem="tBf-oe-2th" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="njm-bT-kZ6"/>
+            </constraints>
+            <size key="customSize" width="206" height="173"/>
+            <connections>
+                <outlet property="imageView" destination="Qg2-pb-gdL" id="nA3-wY-Yzo"/>
+            </connections>
+            <point key="canvasLocation" x="297.5" y="352.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="alchemist_sb.png" width="59" height="33"/>
+    </resources>
+</document>

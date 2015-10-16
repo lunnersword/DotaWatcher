@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="15A284" minimumToolsVersion="Xcode 4.3">
+    <entity name="Ability" representedClassName="DotaWatcher.Ability" syncable="YES">
+        <attribute name="cooldown" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hero_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="img_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="left_details" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lore" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mana_cost" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vid_url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="abilityDetails" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="AbilityDetail" inverseName="ability" inverseEntity="AbilityDetail" syncable="YES"/>
+        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="abilities" inverseEntity="Hero" syncable="YES"/>
+        <relationship name="image_hp1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AbilityImage1" inverseName="ability" inverseEntity="AbilityImage1" syncable="YES"/>
+        <relationship name="image_hp2" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AbilityImage2" inverseName="ability" inverseEntity="AbilityImage2" syncable="YES"/>
+    </entity>
+    <entity name="AbilityDetail" representedClassName="DotaWatcher.AbilityDetail" syncable="YES">
+        <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="ability" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="abilityDetails" inverseEntity="Ability" syncable="YES"/>
+    </entity>
+    <entity name="AbilityImage1" representedClassName="DotaWatcher.AbilityImage1" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <relationship name="ability" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="image_hp1" inverseEntity="Ability" syncable="YES"/>
+    </entity>
+    <entity name="AbilityImage2" representedClassName="DotaWatcher.AbilityImage2" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <relationship name="ability" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="image_hp2" inverseEntity="Ability" syncable="YES"/>
+    </entity>
+    <entity name="Hero" representedClassName="DotaWatcher.Hero" syncable="YES">
+        <attribute name="agi" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="armor" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="atk_range" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="atk_type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dmg" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hero_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="img_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="int" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="localized_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lore" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="missile_spd" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="move_spd" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="portrait_img_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="primary_attribute" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="roles" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sight_range" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="str" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="abilities" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Ability" inverseName="hero" inverseEntity="Ability" syncable="YES"/>
+        <relationship name="fullImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HeroFullImage" inverseName="hero" inverseEntity="HeroFullImage" syncable="YES"/>
+        <relationship name="largeImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HeroLargeImage" inverseName="hero" inverseEntity="HeroLargeImage" syncable="YES"/>
+        <relationship name="levelAttributes" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="LevelAttribute" inverseName="hero" inverseEntity="LevelAttribute" syncable="YES"/>
+        <relationship name="portraitImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HeroPortraitImage" inverseName="hero" inverseEntity="HeroPortraitImage" syncable="YES"/>
+        <relationship name="smallImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HeroSmallImage" inverseName="hero" inverseEntity="HeroSmallImage" syncable="YES"/>
+    </entity>
+    <entity name="HeroFullImage" representedClassName="DotaWatcher.HeroFullImage" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="fullImage" inverseEntity="Hero" syncable="YES"/>
+    </entity>
+    <entity name="HeroLargeImage" representedClassName="DotaWatcher.HeroLargeImage" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="largeImage" inverseEntity="Hero" syncable="YES"/>
+    </entity>
+    <entity name="HeroPortraitImage" representedClassName="DotaWatcher.HeroPortraitImage" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="portraitImage" inverseEntity="Hero" syncable="YES"/>
+    </entity>
+    <entity name="HeroSmallImage" representedClassName="DotaWatcher.HeroSmallImage" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="smallImage" inverseEntity="Hero" syncable="YES"/>
+    </entity>
+    <entity name="Item" representedClassName="DotaWatcher.Item" syncable="YES">
+        <attribute name="attrib" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cd" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="components" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cost" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="img" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="localized_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lore" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mc" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="qual" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="image" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ItemImage" inverseName="item" inverseEntity="ItemImage" syncable="YES"/>
+    </entity>
+    <entity name="ItemImage" representedClassName="DotaWatcher.ItemImage" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="image" inverseEntity="Item" syncable="YES"/>
+    </entity>
+    <entity name="LevelAttribute" representedClassName="DotaWatcher.LevelAttribute" syncable="YES">
+        <attribute name="armor" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="damage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hit_points" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="level" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="mana" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="levelAttributes" inverseEntity="Hero" syncable="YES"/>
+    </entity>
+    <entity name="Player" representedClassName="DotaWatcher.Player" syncable="YES">
+        <attribute name="dotaID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="avatar" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlayerAvatar" inverseName="player" inverseEntity="PlayerAvatar" syncable="YES"/>
+    </entity>
+    <entity name="PlayerAvatar" representedClassName="DotaWatcher.PlayerAvatar" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="player" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="avatar" inverseEntity="Player" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Ability" positionX="-45" positionY="-153" width="128" height="238"/>
+        <element name="AbilityDetail" positionX="115" positionY="117" width="128" height="88"/>
+        <element name="AbilityImage1" positionX="-72" positionY="-63" width="128" height="75"/>
+        <element name="AbilityImage2" positionX="-63" positionY="-54" width="128" height="75"/>
+        <element name="Hero" positionX="-270" positionY="-225" width="128" height="405"/>
+        <element name="HeroFullImage" positionX="-45" positionY="72" width="128" height="75"/>
+        <element name="HeroLargeImage" positionX="-90" positionY="27" width="128" height="75"/>
+        <element name="HeroPortraitImage" positionX="-54" positionY="63" width="128" height="75"/>
+        <element name="HeroSmallImage" positionX="-36" positionY="81" width="128" height="75"/>
+        <element name="Item" positionX="-81" positionY="-72" width="128" height="255"/>
+        <element name="ItemImage" positionX="-72" positionY="-63" width="128" height="75"/>
+        <element name="LevelAttribute" positionX="-252" positionY="198" width="128" height="133"/>
+        <element name="Player" positionX="-81" positionY="-72" width="128" height="105"/>
+        <element name="PlayerAvatar" positionX="-72" positionY="-63" width="128" height="75"/>
+    </elements>
+</model>

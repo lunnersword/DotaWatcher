@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell autoresizesSubviews="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MatchTableViewCell" customModule="DotaWatcher" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="768" height="59"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radiant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPd-eP-WYx">
+                        <rect key="frame" x="8" y="16" width="58" height="27"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.46247944078947251" green="0.74897274493679" blue="0.19487632223942197" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="58" id="ceh-s1-6J3"/>
+                            <constraint firstAttribute="height" constant="27" id="yKj-2Q-z9r"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MyZ-D2-xn4">
+                        <rect key="frame" x="82" y="13" width="59" height="33"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="33" id="Jvk-NO-sMT"/>
+                            <constraint firstAttribute="width" constant="59" id="sif-MS-9av"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-10-07" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBw-It-puH">
+                        <rect key="frame" x="161" y="5" width="91" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="hi1-bl-RyQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22:33:42" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdS-A1-bV4">
+                        <rect key="frame" x="172" y="33" width="70" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="WPJ-hn-VAC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Public matchmaking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZi-cy-5ZQ">
+                        <rect key="frame" x="282" y="19" width="155" height="21"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+                <color key="backgroundColor" red="0.27217824835526194" green="0.21923898671310577" blue="0.19487632223942197" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="VBw-It-puH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="3U5-AX-cob"/>
+                    <constraint firstAttribute="bottom" secondItem="sdS-A1-bV4" secondAttribute="bottom" constant="5" id="7bV-jb-ab2"/>
+                    <constraint firstItem="MyZ-D2-xn4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="FhJ-PJ-Axo"/>
+                    <constraint firstItem="fPd-eP-WYx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="HPC-XN-yvU"/>
+                    <constraint firstItem="VBw-It-puH" firstAttribute="leading" secondItem="MyZ-D2-xn4" secondAttribute="trailing" constant="20" id="KfQ-iM-wib"/>
+                    <constraint firstItem="MyZ-D2-xn4" firstAttribute="leading" secondItem="fPd-eP-WYx" secondAttribute="trailing" constant="16" id="Xg1-E2-baU"/>
+                    <constraint firstItem="DZi-cy-5ZQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="g0c-yx-ngh"/>
+                    <constraint firstItem="sdS-A1-bV4" firstAttribute="centerX" secondItem="VBw-It-puH" secondAttribute="centerX" id="nRa-a8-CSh"/>
+                    <constraint firstItem="fPd-eP-WYx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="vSI-IA-dUg"/>
+                    <constraint firstItem="DZi-cy-5ZQ" firstAttribute="leading" secondItem="VBw-It-puH" secondAttribute="trailing" constant="30" id="zRQ-6K-bKS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="campLabel" destination="fPd-eP-WYx" id="BzM-7l-dcu"/>
+                <outlet property="dayLabel" destination="VBw-It-puH" id="8vg-H9-7dB"/>
+                <outlet property="heroImage" destination="MyZ-D2-xn4" id="ZCv-UU-FFO"/>
+                <outlet property="lobbyTypeLabel" destination="DZi-cy-5ZQ" id="5Oz-7p-pRd"/>
+                <outlet property="timeLabel" destination="sdS-A1-bV4" id="GTf-Nn-Iju"/>
+            </connections>
+            <point key="canvasLocation" x="66" y="338"/>
+        </tableViewCell>
+    </objects>
+</document>
