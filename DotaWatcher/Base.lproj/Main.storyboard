@@ -21,43 +21,6 @@
             </objects>
             <point key="canvasLocation" x="761" y="-721"/>
         </scene>
-        <!--Collection View Controller-->
-        <scene sceneID="c8A-Kl-VA1">
-            <objects>
-                <collectionViewController id="Gk9-FL-gXn" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="m9m-t7-v6s">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OVX-se-Wda">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="oHN-KP-Ho4">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <animations/>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="Gk9-FL-gXn" id="K4j-sb-8On"/>
-                            <outlet property="delegate" destination="Gk9-FL-gXn" id="puL-gA-xtO"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9xY-qd-XhD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1377" y="-643"/>
-        </scene>
         <!--Library-->
         <scene sceneID="LwK-BB-P5v">
             <objects>
@@ -384,6 +347,7 @@
                             <constraint firstAttribute="trailing" secondItem="xU1-HO-W7g" secondAttribute="trailing" constant="5" id="u9o-xh-emy"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="Alp" destination="TQg-Q7-gd3" id="uDT-Fs-qdP"/>
                         <outlet property="AttributeButton" destination="OSz-U5-vhF" id="V4W-Un-gC7"/>
@@ -565,7 +529,7 @@
                                     </label>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" red="0.22807874177631579" green="0.24928042763157876" blue="0.30142372532894735" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="s5d-Ib-yZI" firstAttribute="leading" secondItem="426-hm-PPk" secondAttribute="leading" constant="8" id="3hS-Hl-25A"/>
                                     <constraint firstItem="OAz-O2-zDq" firstAttribute="leading" secondItem="hBY-Xa-59Q" secondAttribute="trailing" constant="8" id="9Ij-oR-neJ"/>
@@ -753,7 +717,7 @@
                                     </label>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" red="0.22807874180000001" green="0.24928042759999999" blue="0.3014237253" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="fHR-Ne-ueA" secondAttribute="trailing" constant="8" id="0Jg-wm-CQe"/>
                                     <constraint firstItem="fP6-cp-4YS" firstAttribute="leading" secondItem="Bvo-nG-Cc5" secondAttribute="trailing" constant="8" id="5K5-op-VKz"/>
@@ -797,7 +761,7 @@
                             </view>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.16961348684210523" green="0.20541221217105263" blue="0.18128083881578946" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="pSs-Qa-2nR" firstAttribute="trailing" secondItem="426-hm-PPk" secondAttribute="trailing" id="0dp-0B-i8c"/>
                             <constraint firstItem="duG-kV-8eQ" firstAttribute="bottom" secondItem="B3Q-f5-5d6" secondAttribute="bottom" id="2A3-XF-5Zu"/>
@@ -860,6 +824,7 @@
                         <outlet property="mediumAvatar" destination="s5d-Ib-yZI" id="5T0-T4-Tga"/>
                         <outlet property="mediumView" destination="426-hm-PPk" id="jZa-iL-KLP"/>
                         <outlet property="personalstate" destination="6d4-2m-VdP" id="yKh-7E-Fpg"/>
+                        <outlet property="playerNameLabel" destination="bO3-Of-PWZ" id="QcH-n6-VZe"/>
                         <outlet property="profileState" destination="o4O-An-cdC" id="HFJ-AZ-4xI"/>
                         <outlet property="profileURL" destination="fHR-Ne-ueA" id="ZgB-Lj-LAM"/>
                         <outlet property="realname" destination="fP6-cp-4YS" id="yuL-dW-3RO"/>
@@ -880,6 +845,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Vmg-9X-3Tq">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
@@ -1073,7 +1039,7 @@
                                             </stackView>
                                         </subviews>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.17447060032894737" green="0.16742907072368421" blue="0.27243523848684209" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="iSx-zF-DD9" firstAttribute="top" secondItem="ghq-1c-cZB" secondAttribute="top" constant="8" id="Beq-QZ-yoM"/>
                                             <constraint firstItem="Dgz-Dj-v91" firstAttribute="leading" secondItem="ghq-1c-cZB" secondAttribute="leading" constant="8" id="GRr-LI-Akh"/>
@@ -1291,7 +1257,7 @@
                                             </imageView>
                                         </subviews>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.14668996710526316" green="0.16742907072368421" blue="0.27243523848684209" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="Md3-xy-igF" firstAttribute="top" secondItem="lfI-pe-eUh" secondAttribute="top" id="1oX-Ut-lRI"/>
                                             <constraint firstItem="h6N-Ut-9Nt" firstAttribute="centerX" secondItem="2Ty-Vh-Eli" secondAttribute="centerX" multiplier="0.5" id="5Tu-rI-lN8"/>
@@ -1390,21 +1356,21 @@
                                                 <rect key="frame" x="250" y="49" width="51" height="18"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.53725490196078429" green="0.0" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Middle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Tc-Ic-NGZ">
                                                 <rect key="frame" x="252" y="72" width="47" height="18"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <color key="textColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.53725490196078429" green="0.0" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVG-Ew-XNZ">
                                                 <rect key="frame" x="262" y="95" width="26" height="18"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <color key="textColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.53725490196078429" green="0.0" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ranged" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yt2-Ua-SZW">
@@ -1507,7 +1473,7 @@
                                             </label>
                                         </subviews>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.14509803921568626" green="0.16862745098039217" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="9Tc-Ic-NGZ" firstAttribute="top" secondItem="0kr-TM-Ky4" secondAttribute="bottom" constant="5" id="0d2-HI-Fft"/>
                                             <constraint firstItem="TQk-ye-BbQ" firstAttribute="centerY" secondItem="5ed-l6-VV6" secondAttribute="centerY" id="18M-ss-YWt"/>
@@ -1657,7 +1623,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="IIn-4h-drP">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
@@ -1683,49 +1650,11 @@
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pql-1Y-n0Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4644" y="1572"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="Y7g-KZ-07o">
-            <objects>
-                <tableViewController id="ed4-3v-3PP" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="P0V-Lf-owp">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2R2-Vi-0Sn">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2R2-Vi-0Sn" id="u54-jG-lm1">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
-                                </tableViewCellContentView>
-                                <animations/>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ed4-3v-3PP" id="hwH-G4-K2G"/>
-                            <outlet property="delegate" destination="ed4-3v-3PP" id="7cc-VD-FFv"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="xtj-Ue-l3b">
-                        <barButtonItem key="leftBarButtonItem" image="back32.png" id="XMI-bd-MHu">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="share32.png" id="4rn-9j-ERH">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x2G-Uo-ExB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3131" y="2310"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UzW-fq-j8w">
@@ -2719,6 +2648,7 @@
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="abilitiesStackView" destination="j0y-qM-XZj" id="eRP-mB-wLR"/>
                         <outlet property="agiImageView" destination="gCJ-fy-bjh" id="Eqf-fF-aYR"/>
@@ -2987,6 +2917,7 @@
                             <constraint firstItem="TKz-OR-js9" firstAttribute="leading" secondItem="Kc7-j2-Kjk" secondAttribute="leading" id="j5t-z0-xdN"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="abilityDescriptionTextView" destination="KEK-6j-GXN" id="k78-aU-5Yf"/>
                         <outlet property="abilityImageView" destination="dbb-dX-TeH" id="4Tj-jE-de1"/>

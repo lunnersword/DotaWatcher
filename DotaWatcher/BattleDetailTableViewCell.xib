@@ -321,7 +321,6 @@
                 <animations/>
                 <color key="backgroundColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="hLX-0A-0li" secondAttribute="bottom" constant="1" id="1w4-ay-vbJ"/>
                     <constraint firstAttribute="trailing" secondItem="acf-Fr-5es" secondAttribute="trailing" constant="5" id="4Av-wH-8s9"/>
                     <constraint firstAttribute="trailing" secondItem="hLX-0A-0li" secondAttribute="trailing" constant="8" id="a4P-Yk-F5d"/>
                     <constraint firstItem="acf-Fr-5es" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="daD-pM-4Xb"/>
@@ -329,11 +328,6 @@
                     <constraint firstItem="hLX-0A-0li" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="n1l-rv-gqm"/>
                     <constraint firstItem="acf-Fr-5es" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="vrp-De-d3Q"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="constraints">
-                        <exclude reference="1w4-ay-vbJ"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <animations/>
             <connections>
@@ -350,6 +344,7 @@
                 <outlet property="heroNameLabel" destination="hca-3b-PiI" id="MZd-r6-rv7"/>
                 <outlet property="killsLabel" destination="qNT-DY-CgT" id="D62-mF-c4w"/>
                 <outlet property="lastHitsLabel" destination="HIw-eS-3BO" id="A1S-Gs-nxb"/>
+                <outlet property="nameLabel" destination="iet-92-gSX" id="8l4-xs-WEK"/>
                 <outlet property="towerDamageLabel" destination="EdY-Ns-gNX" id="lEh-iE-db1"/>
                 <outlet property="xpPerMinLabel" destination="Cqq-e8-82d" id="TY5-y2-iK6"/>
                 <outletCollection property="itemImageViews" destination="Z4E-Lg-SLi" collectionClass="NSMutableArray" id="loM-0Y-tdz"/>

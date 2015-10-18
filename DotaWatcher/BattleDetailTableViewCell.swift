@@ -31,12 +31,13 @@ class BattleDetailTableViewCell: UITableViewCell {
 	@IBOutlet weak var killsLabel: UILabel!
 	@IBOutlet weak var heroLevelLabel: UILabel!
 	
+	@IBOutlet weak var nameLabel: UILabel!
 	//var isHide = true
 	
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-		self.detailView.hidden = true
+		//self.detailView.hidden = true
     }
 	
 
@@ -49,7 +50,7 @@ class BattleDetailTableViewCell: UITableViewCell {
 //			[unowned self] in	
 //			self.detailView.hidden = self.isHide
 //		})
-		print("\(self.detailView.hidden)")
+		//print("\(self.detailView.hidden)")
 
     }
     

@@ -102,7 +102,7 @@ class DotaWatcherTests: XCTestCase {
 			if let countArray = result {
 				count = countArray![0].integerValue
 			}
-			XCTAssertTrue(count == 170, "there should have 110 items")
+			XCTAssertTrue(count == 170, "there should have 170 items")
 		})
 		
 		

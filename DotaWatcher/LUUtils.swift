@@ -18,7 +18,7 @@ class LUUtils: NSObject {
 		return urls[0]
 	}
 	
-	static func convertTo64Bit(id: Int32) -> Int64 {
+	static func convertTo64Bit(id: Int) -> Int64 {
 		return Int64(id) + 76561197960265728
 	}
 	

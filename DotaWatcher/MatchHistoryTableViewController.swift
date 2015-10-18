@@ -22,7 +22,7 @@ class MatchHistoryTableViewController: UITableViewController {
 	
 	var accountID: String!
 	var matches = [MatchItem]()
-	
+	var rawMatches: NSArray!
 	var loadIndicator: UIActivityIndicatorView?
 	
 	
@@ -66,12 +66,24 @@ class MatchHistoryTableViewController: UITableViewController {
 		loadIndicator!.removeFromSuperview()
 	}
 	
+	func getPlayersOfMatch(indexPath: NSIndexPath) -> [Int] {
+		let match = self.rawMatches[indexPath.row] as! NSDictionary
+		var players = [Int]()
+		let rawPlayers = match["players"] as! NSArray
+		for playerElement in rawPlayers {
+			let playerDict = playerElement as! NSDictionary
+			players.append(playerDict["account_id"] as! Int)
+		}
+		return players
+	}
+	
 	func updateMatchHistoryTableview(notification: NSNotification) {
 		if loadIndicator == nil {
 			return
 		}
 		let dict = notification.object as! NSDictionary
 		let matches = dict["matches"] as! NSArray
+		self.rawMatches = matches
 		self.matches.appendContentsOf(self.parseMathesDictToMatchItemArray(matches))
 		self.tableView.reloadData()
 		for view in self.view.subviews {
@@ -99,7 +111,7 @@ class MatchHistoryTableViewController: UITableViewController {
 			view.hidden = true
 		}
 		// show an loading indicator
-		loadIndicator = UIActivityIndicatorView(frame: self.tableView.frame)
+		loadIndicator = UIActivityIndicatorView(frame: self.view.frame)
 		loadIndicator!.activityIndicatorViewStyle = .WhiteLarge
 		self.view.addSubview(loadIndicator!)
 		self.view.bringSubviewToFront(loadIndicator!)
@@ -271,6 +283,7 @@ class MatchHistoryTableViewController: UITableViewController {
 		let match = matches[indexPath.row]
 		let matchDetailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MatchDetailViewController") as! MatchDetailViewController
 		matchDetailViewController.matchID = match.matchID
+		matchDetailViewController.playerIDs = self.getPlayersOfMatch(indexPath)
 		print("\(matchDetailViewController.matchID)")
 		
 		let leftImage = UIImage(data: NSData(contentsOfURL: NSBundle.mainBundle().URLForResource("back32", withExtension: "png")!)!)

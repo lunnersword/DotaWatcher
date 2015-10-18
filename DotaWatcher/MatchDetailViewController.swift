@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import Foundation
 
 enum MatchDetailNotifications: String {
 	case PresentErrorTextView = "MatchDetailPresentErrorTextView"
 	case UpdateMatchDetail = "MatchDetailUpdateMatchDetail"
-
+	case AppendPlayerName = "MatchDetailAppendPlayerName"
 }
 
 class MatchDetailViewController: UIViewController {
@@ -44,7 +45,11 @@ class MatchDetailViewController: UIViewController {
 	var matchID: String!
 	let dotaApi = (UIApplication.sharedApplication().delegate as! AppDelegate).dotaApi
 	
+	var playerIDs: [Int]!
 	var players: NSArray!
+	
+	var playerNames: [String: String]!
+	//let playerNameSemaphore = dispatch_semaphore_create(1)
 	
 	var loadIndicator: UIActivityIndicatorView?
 	
@@ -55,8 +60,11 @@ class MatchDetailViewController: UIViewController {
 		let center = NSNotificationCenter.defaultCenter()
 		center.addObserver(self, selector: "presentErrorTextView:", name: MatchDetailNotifications.PresentErrorTextView.rawValue, object: nil)
 		center.addObserver(self, selector: "updateMatchDetail:", name: MatchDetailNotifications.UpdateMatchDetail.rawValue, object: nil)
+		center.addObserver(self, selector: "updatePlayerNames:", name: MatchDetailNotifications.AppendPlayerName.rawValue, object: nil)
+
 		loadMatchDetail()
     }
+	
 	deinit {
 		NSNotificationCenter.defaultCenter().removeObserver(self)
 	}
@@ -150,8 +158,12 @@ class MatchDetailViewController: UIViewController {
 		self.setTowerStatus(UInt16(dict["tower_status_radiant"] as! Int), direStatus: UInt16(dict["tower_status_dire"] as! Int))
 		self.setBarrackStatus(UInt8(dict["barracks_status_radiant"] as! Int), direStatus: UInt8(dict["barracks_status_dire"] as! Int))
 		self.scrollView.hidden = false
+		
 		loadIndicator!.stopAnimating()
 		loadIndicator!.removeFromSuperview()
+		
+		
+
 	}
 	func presentErrorTextView(notification: NSNotification) {
 		if loadIndicator == nil {
@@ -166,13 +178,57 @@ class MatchDetailViewController: UIViewController {
 		self.view.addSubview(textView)
 		loadIndicator!.removeFromSuperview()
 	}
+	
+	func updatePlayerNames(notification: NSNotification) {
+		if loadIndicator == nil {
+			return
+		}
+		
+		//dispatch_semaphore_wait(playerNameSemaphore, 10*NSEC_PER_SEC)
+		
+		self.playerNames = notification.object as! [String: String]
+		
+		NSNotificationCenter.defaultCenter().postNotificationName(NeedUpdatePlayerNamesNotification, object: self.playerNames)
+	}
+	
+	func loadPlayerNames() {
+		var steamIDs = [String]()
+		for accountID in self.playerIDs {
+			steamIDs.append(LUUtils.convertTo64Bit(accountID).description)
+		}
+		
+		let steams = steamIDs.joinWithSeparator(",")
+		
+		dotaApi.getPlayerSummariesAsync(steams, completionHandler: {
+			(response, data, error) in
+			if error != nil {
+				print("\(error) \n User Info: \(error?.userInfo)")
+			}
+			if let dict = RequestResult.dataToDictionary(data) {
+				
+				var playerNames = [String: String]()
+				for playerElement in dict["players"] as! NSArray {
+					let rawPlayer = playerElement as! NSDictionary
+					playerNames[rawPlayer["steamid"] as! String] = rawPlayer["personaname"] as? String
+				}
+				dispatch_async(dispatch_get_main_queue(), {
+					
+					NSNotificationCenter.defaultCenter().postNotificationName(MatchDetailNotifications.AppendPlayerName.rawValue, object: playerNames)
+				})
+
+			}
+			
+		})
+	}
 
 	func loadMatchDetail() {
 		self.scrollView.hidden = true
-		loadIndicator = UIActivityIndicatorView(frame: self.scrollView.bounds)
+		loadIndicator = UIActivityIndicatorView(frame: self.view.bounds)
 		loadIndicator!.activityIndicatorViewStyle = .WhiteLarge
 		self.view.bringSubviewToFront(loadIndicator!)
 		loadIndicator!.startAnimating()
+		
+		self.loadPlayerNames()
 		
 		dotaApi.getMatchDetailsAsync(self.matchID, completionHandler: {
 			(response, data, error) in
@@ -213,6 +269,7 @@ class MatchDetailViewController: UIViewController {
 		if self.players != nil {
 			let battleDetailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("BattleDetailTableViewController") as! BattleDetailTableViewController
 			battleDetailViewController.players = getPlayerBattleDetails(self.players)
+			battleDetailViewController.playerNames = self.playerNames
 			
 			let leftImage = UIImage(data: NSData(contentsOfURL: NSBundle.mainBundle().URLForResource("back32", withExtension: "png")!)!)
 			battleDetailViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: leftImage, style: .Plain, target: battleDetailViewController, action: "dismissSelf")

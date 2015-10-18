@@ -11,6 +11,10 @@ import CoreData
 
 let playerTableCellIdentifier = "PlayerTableCellIdentifier"
 
+var currentRequestAccountID: Int?
+var currentRequestSteamID: Int64?
+var currentRequestPlayerName: String?
+
 class RequestMainViewController: UIViewController, NSFetchedResultsControllerDelegate {
 
 	@IBOutlet weak var dotaIDInputField: UITextField!
@@ -37,7 +41,7 @@ class RequestMainViewController: UIViewController, NSFetchedResultsControllerDel
 		let nameSort = NSSortDescriptor(key: "name", ascending: true)
 		let idSort = NSSortDescriptor(key: "dotaID", ascending: true)
 		fetchRequest.sortDescriptors = [timeSort, nameSort, idSort]
-		self.tableView.reloadData()
+		
 		fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: coreDataStack.mainContext, sectionNameKeyPath: nil, cacheName: nil)
 		fetchedResultsController.delegate = self
 		do {
@@ -92,7 +96,7 @@ class RequestMainViewController: UIViewController, NSFetchedResultsControllerDel
 	func playerSelected(player: Player) {
 		var steamID: Int64 = 0
 
-		if let id: Int32 = Int32(player.dotaID!) {
+		if let id: Int = Int(player.dotaID!) {
 			steamID = LUUtils.convertTo64Bit(id)		
 		}
 				// TODO: present PlayerDetailViewCRL

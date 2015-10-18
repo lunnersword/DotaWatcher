@@ -10,6 +10,7 @@ import Foundation
 
 class PlayerBattleDetail {
 	var accountID: Int!
+	var name: String?
 	var playerSlot: UInt8!
 	var heroID: Int!
 	var items: [Int]!

@@ -24,6 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.
+		
+//		[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:NO];
+		UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+		
 		let userDefaults = NSUserDefaults.standardUserDefaults()
 		let defaults = [Preferece.IsFirstLaunch.rawValue: true]
 		userDefaults.registerDefaults(defaults)

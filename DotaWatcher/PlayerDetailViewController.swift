@@ -36,6 +36,7 @@ class PlayerDetailViewController: UIViewController {
 	@IBOutlet weak var friendListButton: UIButton!
 	@IBOutlet weak var matchHistoryButton: UIButton!
 	
+	@IBOutlet weak var playerNameLabel: UILabel!
 	var steamIDForSearch: String!
 	var loadIndicator: UIActivityIndicatorView?
 	var fullIndicator: UIActivityIndicatorView?
@@ -134,8 +135,10 @@ class PlayerDetailViewController: UIViewController {
 		
 		var steamID: Int64 = 0
 		
-		if let id: Int32 = Int32(steamIDForSearch) {	
-			steamID = LUUtils.convertTo64Bit(id)	
+		if let id: Int = Int(steamIDForSearch) {	
+			steamID = LUUtils.convertTo64Bit(id)
+			currentRequestSteamID = steamID
+			currentRequestAccountID = id
 		}
 		else if let id: Int64 = Int64(steamIDForSearch) {
 			steamID = id
@@ -344,6 +347,8 @@ class PlayerDetailViewController: UIViewController {
 		default:
 			self.personalstate.text = "Unknow"
 		}
+		self.playerNameLabel.text = playerDict["personaname"] as? String
+		currentRequestPlayerName = self.playerNameLabel.text
 		
 		lastLogOff.text = parseTime(playerDict["lastlogoff"] as! Double)
 		if let realName = playerDict["realname"] as? String {

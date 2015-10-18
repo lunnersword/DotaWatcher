@@ -146,7 +146,7 @@ class HeroDetailViewController: UIViewController, UIScrollViewDelegate {
 			abilityDesStackView.distribution = .Fill
 			abilityDesStackView.alignment = .Fill
 			
-		abilityStackView.addArrangedSubview(abilityImageView)
+			abilityStackView.addArrangedSubview(abilityImageView)
 			abilityStackView.addArrangedSubview(abilityDesStackView)
 			abilityStackView.spacing = 10.0
 			
